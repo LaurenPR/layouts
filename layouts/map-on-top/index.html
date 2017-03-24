@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- CSS Imports -->
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/leaflet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Map -->
+    <div class="header"></div>
+    <div id="map" class="map"></div>
+    <!-- Content -->
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>Water Monitoring Sites</h1>
+            <p>Source: <a href="http://metadata.phila.gov/#home/datasetdetails/5601853b077169215719b5ce/representationdetails/5618031f275ce6a93cac81be/">PWD Water Monitoring Sites</a></p>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Creek ID</th>
+                  <th>Description Name</th>
+                  <th>Creek name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>MCRT007</td>
+                  <td>450 ft US of Monoshone conflu.</td>
+                  <td>Rittenhouse Run (Monoshone trib)</td>
+                </tr>
+                <tr>
+                  <td>SCMC190</td>
+                  <td>above upper locks</td>
+                  <td>Manayunk Canal</td>
+                </tr>
+                <tr>
+                  <td>SCMC170</td>
+                  <td>abandoned bridge/headwater lock system</td>
+                  <td>Manayunk Canal</td>
+                </tr>
+                <tr>
+                  <td>SCMC100</td>
+                  <td>Fountain Street bridge</td>
+                  <td>Manayunk Canal</td>
+                </tr>
+                <tr>
+                  <td>SCMC007</td>
+                  <td>Lock St bridge</td>
+                  <td>Manayunk Canal</td>
+                </tr>
+                <tr>
+                  <td>TF1120</td>
+                  <td>US side of Route 73 (Washington Ln) bridge</td>
+                  <td>Tacony Creek</td>
+                </tr>
+                <tr>
+                  <td>TF975</td>
+                  <td>50 ft DS of High School Rd bridge</td>
+                  <td>Tacony Creek</td>
+                </tr>
+                <tr>
+                  <td>TF620</td>
+                  <td>600 ft DS of E. Cheltenham Ave/city boundary (at footbridge)</td>
+                  <td>Tacony Creek</td>
+                </tr>
+                <tr>
+                  <td>TF500</td>
+                  <td>350 ft DS of Tabor Rd, adjacent to end of Smylie Rd</td>
+                  <td>Tacony Creek</td>
+                </tr>
+                <tr>
+                  <td>TFMC006</td>
+                  <td>600 ft DS of Ashbourne Rd bridge</td>
+                  <td>Mill Creek</td>
+                </tr>
+                <tr>
+                  <td>PP180</td>
+                  <td>350 ft DS of Frankford Ave bridge</td>
+                  <td>Pennypack Creek</td>
+                </tr>
+                <tr>
+                  <td>PPW010</td>
+                  <td>300 ft US of Pennypack conflu.</td>
+                  <td>Wooden Bridge Run</td>
+                </tr>
+                <tr>
+                  <td>PP340</td>
+                  <td>400 ft DS E (DS) of Rhawn St bridge; USGS gage #01467048</td>
+                  <td>Pennypack Creek</td>
+                </tr>
+                <tr>
+                  <td>PP490</td>
+                  <td>650 ft US of Holme Ave bridge</td>
+                  <td>Pennypack Creek</td>
+                </tr>
+                <tr>
+                  <td>PP690</td>
+                  <td>750 ft DS of Krewstown Rd bridge</td>
+                  <td>Pennypack Creek</td>
+                </tr>
+                <tr>
+                  <td>PP860</td>
+                  <td>1000 ft DS of Verree Rd bridge</td>
+                  <td>Pennypack Creek</td>
+                </tr>
+                <tr>
+                  <td>PP970</td>
+                  <td>950 ft DS of Pine Rd bridge; USGS gage #01467042</td>
+                  <td>Pennypack Creek</td>
+                </tr>
+                <tr>
+                  <td>PPHA003</td>
+                  <td>150 ft US of Pennypack conflu. (Moredon Rd)</td>
+                  <td>Harpers Run</td>
+                </tr>
+                <tr>
+                  <td>PP1060</td>
+                  <td>1100 ft US of Moredon Rd, Lorimer Park</td>
+                  <td>Pennypack Creek</td>
+                </tr>
+                <tr>
+                  <td>PP1150</td>
+                  <td>1200 ft DS of Huntingdon Pike bridge</td>
+                  <td>Pennypack Creek</td>
+                </tr>
+                <tr>
+                  <td>PPMBD070</td>
+                  <td>between Mill &amp; Valley Rd bridges</td>
+                  <td>Meadow Brook</td>
+                </tr>
+                <tr>
+                  <td>PPHU070</td>
+                  <td>150 ft DS of Red Lion Rd bridge</td>
+                  <td>Huntingdon Valley Creek</td>
+                </tr>
+                <tr>
+                  <td>PP1250</td>
+                  <td>300 ft DS of Old Welsh Rd bridge</td>
+                  <td>Pennypack Creek</td>
+                </tr>
+                <tr>
+                  <td>PP1380</td>
+                  <td>300 ft US of lower Creek Rd gate</td>
+                  <td>Pennypack Creek</td>
+                </tr>
+                <tr>
+                  <td>PP1500</td>
+                  <td>200 ft US of Creek Rd bridge</td>
+                  <td>Pennypack Creek</td>
+                </tr>
+                <tr>
+                  <td>PPSH030</td>
+                  <td>250 ft DS of Byberry Rd bridge</td>
+                  <td>Southhampton Creek</td>
+                </tr>
+                <tr>
+                  <td>PP1680</td>
+                  <td>500 ft US of Davisville Rd bridge</td>
+                  <td>Pennypack Creek</td>
+                </tr>
+                <tr>
+                  <td>PPHO010</td>
+                  <td>450 ft US of Pennypack conflu. (Skrobul Rd Apt complex)</td>
+                  <td>Horsham Creek, E. branch</td>
+                </tr>
+                <tr>
+                  <td>PP1870</td>
+                  <td>1800 ft DS of Briar Mill Rd bridge</td>
+                  <td>Pennypack Creek</td>
+                </tr>
+                <tr>
+                  <td>PP2020</td>
+                  <td>100 ft US of Sawmill Ln bridge</td>
+                  <td>Pennypack Creek</td>
+                </tr>
+                <tr>
+                  <td>PQ115</td>
+                  <td>Red Lion Rd bridge, US of Byberry conflu.</td>
+                  <td>Poquessing Creek</td>
+                </tr>
+                <tr>
+                  <td>PQ190</td>
+                  <td>3300 ft DS of Route 63 (Woodhaven Rd) bridge; at end of Wickley Rd</td>
+                  <td>Poquessing Creek</td>
+                </tr>
+                <tr>
+                  <td>PQ395</td>
+                  <td>600 ft DS of Knights Rd bridge (Franklin Mills Mall)</td>
+                  <td>Poquessing Creek</td>
+                </tr>
+                <tr>
+                  <td>PQ465</td>
+                  <td>250 ft US of Dunks Ferry Rd bridge</td>
+                  <td>Poquessing Creek</td>
+                </tr>
+                <tr>
+                  <td>PQ665</td>
+                  <td>500 ft DS of Roosevelt Blvd. bridge</td>
+                  <td>Poquessing Creek</td>
+                </tr>
+                <tr>
+                  <td>PQB025</td>
+                  <td>700 ft US of Knights Rd bridge (behind Crestmont Ave houses)</td>
+                  <td>Byberry Creek</td>
+                </tr>
+                <tr>
+                  <td>PQ770</td>
+                  <td>700 ft US of railroad bridge; at end of Kallaste St</td>
+                  <td>Poquessing Creek</td>
+                </tr>
+                <tr>
+                  <td>PQ845</td>
+                  <td>500 ft DS of Philmont Rd bridge</td>
+                  <td>Poquessing Creek</td>
+                </tr>
+                <tr>
+                  <td>PQB210</td>
+                  <td>700 ft DS of Morrell Ave bridge (adj. to Churchill Rd)</td>
+                  <td>Byberry Creek</td>
+                </tr>
+                <tr>
+                  <td>PQB385</td>
+                  <td>250 ft US of Academy Rd bridge</td>
+                  <td>Byberry Creek</td>
+                </tr>
+                <tr>
+                  <td>PQB450</td>
+                  <td>100 ft US of Thornton Rd bridge</td>
+                  <td>Byberry Creek</td>
+                </tr>
+                <tr>
+                  <td>PQ155</td>
+                  <td>2200 ft US of Red Lion Rd bridge, between Cedar &amp; Tennis Ave</td>
+                  <td>Poquessing Creek</td>
+                </tr>
+                <tr>
+                  <td>PQ820</td>
+                  <td>100 ft DS of Trevose Rd bridge</td>
+                  <td>Poquessing Creek</td>
+                </tr>
+                <tr>
+                  <td>PQB305</td>
+                  <td>200 ft DS of Chalfont Dr bridge</td>
+                  <td>Byberry Creek</td>
+                </tr>
+                <tr>
+                  <td>PQU013</td>
+                  <td>700 ft US of Trevose Rd bridge</td>
+                  <td>Unnamed tributary to Poquessing Creek</td>
+                </tr>
+                <tr>
+                  <td>DCI010</td>
+                  <td>CC Golf Course Near Haverford Ave; US of 2nd golf cart bridge</td>
+                  <td>Indian Creek</td>
+                </tr>
+                <tr>
+                  <td>DCN010</td>
+                  <td>end of Walnut Park Dr off 69th St, at footbridge</td>
+                  <td>Naylors Run</td>
+                </tr>
+                <tr>
+                  <td>DCC455</td>
+                  <td>650 ft US of CCCEEC footbridge</td>
+                  <td>Cobbs Creek</td>
+                </tr>
+                <tr>
+                  <td>DCS170</td>
+                  <td>Moores Lake Park; 1100 ft US of 13th Ave</td>
+                  <td>Stony Creek</td>
+                </tr>
+                <tr>
+                  <td>DCM300</td>
+                  <td>90 ft US of Academy Ave bridge</td>
+                  <td>Muckinipattis Creek</td>
+                </tr>
+                <tr>
+                  <td>DCD765</td>
+                  <td>400 ft DS of Providence Ave</td>
+                  <td>Darby Creek</td>
+                </tr>
+                <tr>
+                  <td>DCC770</td>
+                  <td>Route 1 (Township Line Rd/City Ave) bridge; USGS gage #01475530</td>
+                  <td>Cobbs Creek</td>
+                </tr>
+                <tr>
+                  <td>DCD1170</td>
+                  <td>1500 ft DS of Route 1 (State Road) bridge, at railroad bridge</td>
+                  <td>Darby Creek</td>
+                </tr>
+                <tr>
+                  <td>DCD1660</td>
+                  <td>Route 320 (Sproul Rd) bridge, DS side</td>
+                  <td>Darby Creek</td>
+                </tr>
+                <tr>
+                  <td>WS005</td>
+                  <td>400 ft below Ridge Ave dam</td>
+                  <td>Wissahickon Creek</td>
+                </tr>
+                <tr>
+                  <td>WSMC025</td>
+                  <td>400 ft US of Rittenhousetown stone bridge</td>
+                  <td>Monoshone Creek</td>
+                </tr>
+                <tr>
+                  <td>WS315</td>
+                  <td>400 ft US of Mount Airy Rd bridge</td>
+                  <td>Wissahickon Creek</td>
+                </tr>
+                <tr>
+                  <td>WSCC066</td>
+                  <td>100 ft US of McCallum St bridge</td>
+                  <td>Cresheim Creek</td>
+                </tr>
+                <tr>
+                  <td>WS492</td>
+                  <td>350 ft DS of Rex Ave bridge</td>
+                  <td>Wissahickon Creek</td>
+                </tr>
+                <tr>
+                  <td>WSBM003</td>
+                  <td>150 ft US of Wiss mainstem conflu...</td>
+                  <td>Bells Mill Run</td>
+                </tr>
+                <tr>
+                  <td>WS680</td>
+                  <td>Chestnut Hill College tennis courts; 650 ft US of Gtown Pk bridge</td>
+                  <td>Wissahickon Creek</td>
+                </tr>
+                <tr>
+                  <td>WS1075</td>
+                  <td>At Skippack Pike bridge; USGS gage #014739010</td>
+                  <td>Wissahickon Creek</td>
+                </tr>
+                <tr>
+                  <td>WSSR096</td>
+                  <td>750 ft DS of I-276 bridge, adjacent to Pennsylvania Ave &amp; Route 309</td>
+                  <td>Sandy Run</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Javascript Imports -->
+    <script src="../../js/leaflet.js"></script>
+    <script src="../../js/setup-noscroll.js"></script>
+  </body>
+</html>
